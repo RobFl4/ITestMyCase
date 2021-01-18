@@ -13,6 +13,7 @@ hr {
 
   h3 {
     color: #66bfbf;
+    /* margin-top: 0; */
   }
 
   /* Dropdown Button */
@@ -194,4 +195,25 @@ hr {
   height: 8px;
   border-radius: 50%;
   background: white;
+}
+
+/* class selectors */
+.circular { border-radius: 10%;}
+.code-img-left {
+  float: left;
+  margin-right: 30px;
+}
+
+.code-img-right {
+  width: 25%;
+  float: right;
+  margin-left: 30px;
+}
+
+.text-cleared-left {
+  clear: left;
+}
+
+.text-cleared-right {
+  clear: right;
 }
