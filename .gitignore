@@ -1,0 +1,14 @@
+# Never check in node_modules
+node_modules
+
+# prevent adding cypress when accidentally started from root
+/cypress
+/cypress.json
+**/support/App*.js
+cypress.env.json
+
+# Never check in
+*.copy.*
+
+# Ignore credential files
+.npmrc
