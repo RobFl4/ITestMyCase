@@ -21,9 +21,16 @@
         // Voorruit gebarsten? Ga naar Carglass
         if (document.getElementById("barst").checked || document.getElementById("sterretje").checked) {
           document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass.";
-        } else {
-          // document.getElementById("message").innerHTML = "De afspraak wordt ingepland zonder een afspraak bij Carglass.";
-          // document.getElementById("message").style.color = "green";
+        } 
+        // Verlichting in orde? Zo niet, ga naar ACtronics
+          if (document.getElementsByTagName("input")[11].checked && document.getElementsByTagName("input")[12].checked) {
+          if (document.getElementsByTagName("input")[13].checked ||
+            document.getElementsByTagName("input")[14].checked)    
+            if (document.getElementById("barst").checked || document.getElementById("sterretje").checked) {
+            document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass en ACtronics.";
+            } else {
+              document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij ACtronics.";
+            }
         }
         // Banden versleten of lek? Ga naar Profile Tyrecenter
         if (document.getElementsByTagName("input")[5].checked) {
@@ -32,13 +39,22 @@
             document.getElementsByTagName("input")[8].checked ||
             document.getElementsByTagName("input")[9].checked ||
             document.getElementsByTagName("input")[10].checked)
-            document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Profile Tyrecenter.";
-        }
-        // Verlichting in orde? Zo niet, ga naar ACtronics
-        if (document.getElementsByTagName("input")[11].checked && document.getElementsByTagName("input")[12].checked) {
+            if (document.getElementById("barst").checked || document.getElementById("sterretje").checked) {
+              if (document.getElementsByTagName("input")[11].checked && document.getElementsByTagName("input")[12].checked) {
           if (document.getElementsByTagName("input")[13].checked ||
-            document.getElementsByTagName("input")[14].checked)
-            document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij ACtronics.";
+            document.getElementsByTagName("input")[14].checked) {
+              document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass, ACtronics en Profile Tyrecenter.";
+            } else {
+              document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass en Profile Tyrecenter.";
+              }
+           }
+           } else {
+             if (document.getElementsByTagName("input")[13].checked ||
+            document.getElementsByTagName("input")[14].checked) {
+              document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij ACtronics en Profile Tyrecenter.";  
+            } else {document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Profile Tyrecenter.";
+          }
+            } 
         }
       } else {
         document.querySelector("#kilometerstand").style.color = "red";
