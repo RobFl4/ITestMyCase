@@ -33,25 +33,28 @@
             }
         }
         // Banden versleten of lek? Ga naar Profile Tyrecenter
-        if (document.getElementsByTagName("input")[5].checked) {
-          if (document.getElementsByTagName("input")[6].checked ||
+        if (document.getElementsByTagName("input")[10].checked) {
+          if (document.getElementsByTagName("input")[5].checked ||
+            document.getElementsByTagName("input")[6].checked ||
             document.getElementsByTagName("input")[7].checked ||
             document.getElementsByTagName("input")[8].checked ||
-            document.getElementsByTagName("input")[9].checked ||
-            document.getElementsByTagName("input")[10].checked)
+            document.getElementsByTagName("input")[9].checked)
             if (document.getElementById("barst").checked || document.getElementById("sterretje").checked) {
               if (document.getElementsByTagName("input")[11].checked && document.getElementsByTagName("input")[12].checked) {
-          if (document.getElementsByTagName("input")[13].checked ||
-            document.getElementsByTagName("input")[14].checked) {
-              document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass, ACtronics en Profile Tyrecenter.";
+                 if (document.getElementsByTagName("input")[13].checked ||
+                     document.getElementsByTagName("input")[14].checked) {
+                    document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass, ACtronics en Profile Tyrecenter.";
             } else {
               document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass en Profile Tyrecenter.";
               }
            }
            } else {
+            if (document.getElementsByTagName("input")[11].unchecked || document.getElementsByTagName("input")[12].unchecked) {
+            document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Carglass en Profile Tyrecenter.";
+           }
              if (document.getElementsByTagName("input")[13].checked ||
-            document.getElementsByTagName("input")[14].checked) {
-              document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij ACtronics en Profile Tyrecenter.";  
+                 document.getElementsByTagName("input")[14].checked) {
+                    document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij ACtronics en Profile Tyrecenter.";  
             } else {document.getElementById("message").innerHTML = "De afspraak wordt ingepland inclusief een afspraak bij Profile Tyrecenter.";
           }
             } 
@@ -148,26 +151,26 @@
     <!-- Versleten of lekke banden ??? -->
     <br />
     <h3>Banden versleten of lek?</h3>
-      <input type="checkbox" id="sensor" name="sensor" value="sensor" checked="checked"> Bandenspanning sensor OK<br>
       <input type="checkbox" id="links-voor" name="links-voor" value="links-voor"> Links voor<br>
       <input type="checkbox" id="rechts-voor" name="rechts-voor" value="rechts-voor"> Rechts voor<br>
       <input type="checkbox" id="links-achter" name="links-achter" value="links-achter"> Links achter<br>
       <input type="checkbox" id="rechts-achter" name="rechts-achter" value="rechts-achter"> Rechts achter<br>
       <input type="checkbox" id="reserve-wiel" name="reserve-wiel" value="reserve-wiel"> Reserve wiel<br>
+      <input type="checkbox" id="sensor" name="sensor" value="sensor" checked="checked"> Bandenspanning sensor OK<br>
   </div>
   
   <div>
     <!-- Verlichting -->
     <br />
     <h3>Verlichting in orde?</h3>
-      <input type="checkbox" id="contact" checked="checked"> Contact ingeschakeld?<br>
       <input type="checkbox" id="schakelaar" checked="checked"> Lichtschakelaar aan?<br>
-      <input type="checkbox" id="koplamp-rechts"> Rechterkoplamp stuk?<br>
+      <input type="checkbox" id="contact" checked="checked"> Contact ingeschakeld?<br>
       <input type="checkbox" id="koplamp-links"> Linkerkoplamp stuk?<br>
+      <input type="checkbox" id="koplamp-rechts"> Rechterkoplamp stuk?<br>
   </div>
   <br />
   <!-- Verzend je keuze -->
-  <button type="submit" class=btn-primary data-testid="check-button" name="" value="Controleer" onclick="myFunction()">Controleer</button>
+  <button type="submit" class=btn-primary data-testid="check-button" id="check-button" name="check-button" value="Controleer" onclick="myFunction()">Maak afspraak</button>
   <a href='servicebeurt.html'>
   <!-- Terug naar opdracht -->
     <button type="submit" class=btn-primary data-testid="go-back" name="" value="Terug">Terug naar opdracht</button>
