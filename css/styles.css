@@ -141,6 +141,12 @@ hr {
     left: 220px;
 }
 
+.img-servicebeurt {
+  position: relative;
+    bottom: 10px;
+    left: 0px;
+}
+
 .parabank {
   /* border: solid; */
   /* height: 400px;   */
